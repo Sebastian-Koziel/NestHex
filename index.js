@@ -119,12 +119,12 @@ export class ${dtoType}${capitalize(moduleName)}Dto {
 `
 };
 
-// Pomocnicza funkcja do kapitalizacji
+
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Funkcja tworząca strukturę
+
 function createFileStructure(baseDir, moduleName) {
     const structure = [
         { path: `${moduleName}/application/use-cases/create-${moduleName}.use-case.ts`, content: '' },
@@ -149,14 +149,14 @@ function createFileStructure(baseDir, moduleName) {
         }
 
         fs.writeFileSync(fullPath, content.trim());
-        console.log(`Utworzono: ${fullPath}`);
+        console.log(`All done master: ${fullPath}`);
     });
 }
 
-// Przykład użycia
+
 const moduleName = process.argv[2];
 if (!moduleName) {
-    console.error('Podaj nazwę modułu jako argument, np. NestHex generate module logisticUnits');
+    console.error('Give us name');
     process.exit(1);
 }
 
